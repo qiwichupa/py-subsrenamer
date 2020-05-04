@@ -10,10 +10,10 @@
 import os
 import re
 
+import tkinter as tk
 from tkinter import filedialog
-from tkinter import scrolledtext
-from tkinter import *
 
+ver = '1.0'
 
 def browse_button():
     # Allow user to select a directory and store it in global var
@@ -87,26 +87,26 @@ def rename_subs():
                                 print('OK: "{}"'.format(newsubtitlename))
 
 
-root = Tk()
-root.title("py-subsrenamer (gui) # v 1.0")
+root = tk.Tk()
+root.title("py-subsrenamer # v " + ver)
 root.resizable(False, False)
 
-folder_path = StringVar()
-lbl1 = Label(textvariable=folder_path,width=20, anchor="e")
+folder_path = tk.StringVar()
+lbl1 = tk.Label(root,textvariable=folder_path,width=20, anchor="e")
 lbl1.grid(row=0, column=1)
 
 
-btnbrowse = Button(text="Browse", width=12, command=browse_button)
+btnbrowse = tk.Button(root,text="Browse", width=12, command=browse_button)
 btnbrowse.grid(row=0, column=2)
 
-lbl2 = Label(text='Optional suffix (ex: _en):')
+lbl2 = tk.Label(root,text='Optional suffix (ex: _en):')
 lbl2.grid(row=2, column=1)
 
-suffixentry = Entry(width=14)
+suffixentry = tk.Entry(root,width=14)
 suffixentry.grid(row=2, column=2, )
 
-btnrename = Button(text="Rename Subs", command=rename_subs)
+btnrename = tk.Button(root,text="Rename Subs", command=rename_subs)
 btnrename['state'] = 'disabled'
 btnrename.grid(row=3, column=1, columnspan=2)
 
-mainloop()
+root.mainloop()
