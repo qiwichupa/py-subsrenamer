@@ -9,6 +9,8 @@
 import os
 import re
 
+ver = "1.0"
+
 extsub = ('.srt','.ssa', '.sub')
 extmovie = ('.avi','.mkv', '.mp4')
 
@@ -16,6 +18,9 @@ extmovie = ('.avi','.mkv', '.mp4')
 reexprsub = ['([0-9]+)([0-9][0-9])[^p]'
            , 's([0-9]+)e([0-9]+)[^p]'
            , '([0-9]+)x([0-9]+)[^p]']
+
+print("py-subsrenamer. Ver. " + ver)
+print()
 
 subsuffix=input("Enter lang suffix for subs(optional, ex: _en): ")
 
