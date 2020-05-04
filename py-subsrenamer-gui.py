@@ -31,10 +31,10 @@ def rename_subs():
     extsub = ('.srt','.ssa', '.sub')
     extmovie = ('.avi','.mkv', '.mp4')
 
-    # accepted sub names
-    reexprsub = ['([0-9]+)([0-9][0-9])'
-            , 's([0-9]+)e([0-9]+)'
-            , '([0-9]+)x([0-9]+)']
+    # accepted sub names (but without "p" - most likely it is a resolution marker (1080p etc))
+    reexprsub = ['([0-9]+)([0-9][0-9])[^p]'
+            , 's([0-9]+)e([0-9]+)[^p]'
+            , '([0-9]+)x([0-9]+)[^p]']
 
     subsuffix=suffixentry.get()
     
@@ -58,10 +58,10 @@ def rename_subs():
                 for se in re.finditer(regex, subtitle,re.IGNORECASE):
                     season = se.groups()[0].lstrip('0') # remove leading zeroes
                     episode = se.groups()[1]
-                    # set patterns for movie finding
-                    reexprmovie = [ '{}{}'.format(season,episode)
-                                ,'s0*{}e{}'.format(season,episode)
-                                ,'0*{}x{}'.format(season,episode)]
+                    # set patterns for movie finding (but without "p" - most likely it is a resolution marker (1080p etc))
+                    reexprmovie = [ '{}{}[^p]'.format(season,episode)
+                                ,'s0*{}e{}[^p]'.format(season,episode)
+                                ,'0*{}x{}[^p]'.format(season,episode)]
                 # search movie...
                 for mfile in sorted(os.listdir()):
                     # ... with right extension...
@@ -88,6 +88,7 @@ def rename_subs():
 
 root = Tk()
 root.title("py-subsrenamer (gui)")
+root.resizable(False, False)
 
 folder_path = StringVar()
 lbl1 = Label(textvariable=folder_path,width=20, anchor="e")
