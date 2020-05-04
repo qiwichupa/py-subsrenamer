@@ -4,6 +4,7 @@
 # Acceped syntaxes for season/episode are: 304, s3e04, s03e04, 3x04 (case insensitive)
 #
 # Based on bash script: https://gist.github.com/colinux/799510
+# v 1.0
 # GUI version
 
 import os
@@ -87,7 +88,7 @@ def rename_subs():
 
 
 root = Tk()
-root.title("py-subsrenamer (gui)")
+root.title("py-subsrenamer (gui) # v 1.0")
 root.resizable(False, False)
 
 folder_path = StringVar()
