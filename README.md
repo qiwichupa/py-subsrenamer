@@ -3,4 +3,5 @@ Renames subtitles files according to tv shows names found in a directory. Accepe
 
 Based on bash script: https://gist.github.com/colinux/799510
 
-Usage: https://www.youtube.com/watch?v=SAOKKbDpDqc
+Usage:
+* Windows https://www.youtube.com/watch?v=L0P9mTu1hf0
