@@ -4,7 +4,7 @@
 # Acceped syntaxes for season/episode are: 304, s3e04, s03e04, 3x04 (case insensitive)
 #
 # Based on bash script: https://gist.github.com/colinux/799510
-# v 1.1
+# v 1.1.1
 # GUI version
 
 import os
@@ -43,13 +43,14 @@ class MainWindow(wx.Frame):
         sizer.Add(self.btnsubsrename,   pos=(4,0),              flag=wx.LEFT)
         sizer.Add(self.btnabout,        pos=(4,1),              flag=wx.RIGHT)
         self.SetSizer(sizer)
+        sizer.Fit(self)
         
         self.Fit()
         self.Show(True)
 
     def select_directory(self,e):
         """ Select directory and save path to self.dirname """
-        dlg = wx.DirDialog(self, "Choose a directory", '')
+        dlg = wx.DirDialog(self, "Choose a directory",'')
         if dlg.ShowModal() == wx.ID_OK:
             self.dirname = dlg.GetPath()
             self.lblpath.SetLabel('Folder: {}'.format(os.path.basename(self.dirname)))
@@ -156,7 +157,7 @@ class MainWindow(wx.Frame):
                                 
         return result
 app = wx.App(False)
-ver='1.1'
+ver='1.1.1'
 title='py-subsrenamer v.{}'.format(ver)
 frame = MainWindow(None, title)
 app.MainLoop()
