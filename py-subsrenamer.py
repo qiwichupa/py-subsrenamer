@@ -4,7 +4,7 @@
 # Acceped syntaxes for season/episode are: 304, s3e04, s03e04, 3x04 (case insensitive)
 #
 # Based on bash script: https://gist.github.com/colinux/799510
-# v 1.0.1
+# v 1.1
 
 import os
 import re
@@ -92,7 +92,7 @@ def match_subs_and_video(extsub, extmovie, subsuffix):
     return result
 
 
-ver = "1.0.1"
+ver = "1.1"
 
 extsub = ('.srt','.ssa', '.sub')
 extmovie = ('.avi','.mkv', '.mp4')
