@@ -98,7 +98,8 @@ class MainWindow(wx.Frame):
         dlg.ShowModal()
     
     def match_subs_and_video(self):
-        """ Find subtitles and videofiles according name rules """
+        """ Find subtitles and videofiles according name rules. 
+            Returns a list of tuples: [(old subtitle name, new subtitle name)]"""
         folder_path = self.dirname
         subsuffix = self.entrysuffix.GetValue()
 
@@ -155,7 +156,7 @@ class MainWindow(wx.Frame):
                                 
         return result
 app = wx.App(False)
-id='1.0.1'
-title='subsrenamer v.{}'.format(id)
+ver='1.0.1'
+title='py-subsrenamer v.{}'.format(ver)
 frame = MainWindow(None, title)
 app.MainLoop()
