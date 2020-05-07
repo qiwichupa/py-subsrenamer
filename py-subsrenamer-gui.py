@@ -4,7 +4,7 @@
 # Acceped syntaxes for season/episode are: 304, s3e04, s03e04, 3x04 (case insensitive)
 #
 # Based on bash script: https://gist.github.com/colinux/799510
-# v 1.0.1
+# v 1.1
 # GUI version
 
 import os
@@ -156,7 +156,7 @@ class MainWindow(wx.Frame):
                                 
         return result
 app = wx.App(False)
-ver='1.0.1'
+ver='1.1'
 title='py-subsrenamer v.{}'.format(ver)
 frame = MainWindow(None, title)
 app.MainLoop()
