@@ -55,8 +55,8 @@ class MainWindow(wx.Frame):
             self.dirname = dlg.GetPath()
             self.lblpath.SetLabel('Folder: {}'.format(os.path.basename(self.dirname)))
             self.rename_subs_preview(self)
+            self.btnsubsrename.Enable()
         dlg.Destroy()
-        self.btnsubsrename.Enable()
 
     def rename_subs_preview(self,e):
         self.preview.SetValue('')
