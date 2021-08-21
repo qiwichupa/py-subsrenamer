@@ -94,7 +94,7 @@ def match_subs_and_video(extsub, extmovie, subsuffix):
 
 ver = "1.1"
 
-extsub = ('.srt','.ssa', '.sub')
+extsub = ('.srt','.ssa', '.ass', '.sub')
 extmovie = ('.avi','.mkv', '.mp4')
 
 
