@@ -104,7 +104,7 @@ class MainWindow(wx.Frame):
         folder_path = self.dirname
         subsuffix = self.entrysuffix.GetValue()
 
-        extsub = ('.srt','.ssa', '.sub')
+        extsub = ('.srt','.ssa', 'ass', '.sub')
         extmovie = ('.avi','.mkv', '.mp4')
 
         # accepted sub names (but without "p" - most likely it is a resolution marker (1080p etc))
